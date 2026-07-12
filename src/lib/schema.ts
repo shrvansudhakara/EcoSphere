@@ -7,8 +7,8 @@ import {
   serial,
   text,
   timestamp,
-  varchar,
   unique,
+  varchar,
 } from "drizzle-orm/pg-core";
 
 export const departments = pgTable("departments", {
@@ -38,13 +38,9 @@ export const employees = pgTable("employees", {
     .references(() => departments.id)
     .notNull(),
 
-  isActive: boolean("is_active")
-    .default(true)
-    .notNull(),
+  isActive: boolean("is_active").default(true).notNull(),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const categoryTypeEnum = pgEnum("category_type", [
@@ -169,104 +165,75 @@ export const csrActivities = pgTable("csr_activities", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-
 export const challenges = pgTable("challenges", {
+  id: serial("id").primaryKey(),
 
- id: serial("id").primaryKey(),
+  title: text("title").notNull(),
 
- title: text("title")
-   .notNull(),
+  categoryId: integer("category_id")
+    .references(() => categories.id)
+    .notNull(),
 
- categoryId: integer("category_id")
-   .references(() => categories.id)
-   .notNull(),
+  description: text("description"),
 
- description: text("description"),
+  xp: integer("xp").notNull(),
 
- xp: integer("xp")
-   .notNull(),
+  difficulty: varchar("difficulty").notNull(),
 
- difficulty: varchar("difficulty")
-   .notNull(),
+  evidenceRequired: boolean("evidence_required").default(false),
 
- evidenceRequired: boolean("evidence_required")
-   .default(false),
+  deadline: timestamp("deadline"),
 
- deadline: timestamp("deadline"),
+  status: varchar("status").default("DRAFT"),
 
- status: varchar("status")
-   .default("DRAFT"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 
- createdAt: timestamp("created_at")
-   .defaultNow()
-   .notNull(),
-
- updatedAt: timestamp("updated_at")
-   .defaultNow()
-   .notNull(),
-
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+export const employeeParticipations = pgTable("employee_participations", {
+  id: serial("id").primaryKey(),
 
-export const employeeParticipations =
-pgTable("employee_participations", {
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
 
- id: serial("id").primaryKey(),
+  activityId: integer("activity_id")
+    .references(() => csrActivities.id)
+    .notNull(),
 
- employeeId: integer("employee_id")
- .references(()=>employees.id)
- .notNull(),
+  proof: text("proof"),
 
- activityId: integer("activity_id")
- .references(()=>csrActivities.id)
- .notNull(),
+  approvalStatus: varchar("approval_status").default("PENDING"),
 
- proof:text("proof"),
+  pointsEarned: integer("points_earned").default(0),
 
- approvalStatus:varchar("approval_status")
- .default("PENDING"),
+  completionDate: timestamp("completion_date"),
 
- pointsEarned:integer("points_earned")
- .default(0),
-
- completionDate:timestamp("completion_date"),
-
- createdAt:timestamp("created_at")
- .defaultNow()
- .notNull()
-
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+export const challengeParticipations = pgTable("challenge_participations", {
+  id: serial("id").primaryKey(),
 
-export const challengeParticipations =
-pgTable("challenge_participations", {
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
 
- id: serial("id").primaryKey(),
+  challengeId: integer("challenge_id")
+    .references(() => challenges.id)
+    .notNull(),
 
- employeeId:integer("employee_id")
- .references(()=>employees.id)
- .notNull(),
+  progress: integer("progress").default(0),
 
- challengeId:integer("challenge_id")
- .references(()=>challenges.id)
- .notNull(),
+  proof: text("proof"),
 
- progress:integer("progress")
- .default(0),
+  approvalStatus: varchar("approval_status").default("PENDING"),
 
- proof:text("proof"),
-
- approvalStatus:varchar("approval_status")
- .default("PENDING"),
-
- xpAwarded:integer("xp_awarded")
- .default(0),
-
+  xpAwarded: integer("xp_awarded").default(0),
 });
 
-export const policyAcknowledgements =
-pgTable("policy_acknowledgements", {
-
+export const policyAcknowledgements = pgTable("policy_acknowledgements", {
   id: serial("id").primaryKey(),
 
   employeeId: integer("employee_id")
@@ -277,114 +244,75 @@ pgTable("policy_acknowledgements", {
     .references(() => esgPolicies.id)
     .notNull(),
 
-  acknowledged: boolean("acknowledged")
-    .default(false)
-    .notNull(),
+  acknowledged: boolean("acknowledged").default(false).notNull(),
 
   acknowledgedAt: timestamp("acknowledged_at"),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
-
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const audits =
-pgTable("audits", {
-
+export const audits = pgTable("audits", {
   id: serial("id").primaryKey(),
 
   departmentId: integer("department_id")
     .references(() => departments.id)
     .notNull(),
 
-  policyId: integer("policy_id")
-    .references(() => esgPolicies.id),
+  policyId: integer("policy_id").references(() => esgPolicies.id),
 
-  auditorId: integer("auditor_id")
-    .references(() => employees.id),
+  auditorId: integer("auditor_id").references(() => employees.id),
 
-  auditDate: timestamp("audit_date")
-    .defaultNow()
-    .notNull(),
+  auditDate: timestamp("audit_date").defaultNow().notNull(),
 
-  status: varchar("status")
-    .default("OPEN"),
+  status: varchar("status").default("OPEN"),
 
   score: integer("score"),
 
   remarks: text("remarks"),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
-
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const complianceIssues =
-pgTable("compliance_issues", {
-
+export const complianceIssues = pgTable("compliance_issues", {
   id: serial("id").primaryKey(),
 
   auditId: integer("audit_id")
     .references(() => audits.id)
     .notNull(),
 
-  severity: varchar("severity")
-    .notNull(),
+  severity: varchar("severity").notNull(),
 
-  description: text("description")
-    .notNull(),
+  description: text("description").notNull(),
 
-  ownerId: integer("owner_id")
-    .references(() => employees.id),
+  ownerId: integer("owner_id").references(() => employees.id),
 
   dueDate: timestamp("due_date"),
 
-  status: varchar("status")
-    .default("OPEN"),
+  status: varchar("status").default("OPEN"),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
-
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const departmentScores =
-pgTable("department_scores", {
-
+export const departmentScores = pgTable("department_scores", {
   id: serial("id").primaryKey(),
 
   departmentId: integer("department_id")
     .references(() => departments.id)
     .notNull(),
 
-  environmentalScore: integer("environmental_score")
-    .default(0)
-    .notNull(),
+  environmentalScore: integer("environmental_score").default(0).notNull(),
 
-  socialScore: integer("social_score")
-    .default(0)
-    .notNull(),
+  socialScore: integer("social_score").default(0).notNull(),
 
-  governanceScore: integer("governance_score")
-    .default(0)
-    .notNull(),
+  governanceScore: integer("governance_score").default(0).notNull(),
 
-  totalScore: integer("total_score")
-    .default(0)
-    .notNull(),
+  totalScore: integer("total_score").default(0).notNull(),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
-
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 //6 extra gamification tables
-export const employeeGamification =
-pgTable("employee_gamification", {
-
+export const employeeGamification = pgTable("employee_gamification", {
   id: serial("id").primaryKey(),
 
   employeeId: integer("employee_id")
@@ -392,52 +320,38 @@ pgTable("employee_gamification", {
     .notNull()
     .unique(),
 
-  totalXp: integer("total_xp")
-    .default(0)
-    .notNull(),
+  totalXp: integer("total_xp").default(0).notNull(),
 
-  pointsBalance: integer("points_balance")
-    .default(0)
-    .notNull(),
+  pointsBalance: integer("points_balance").default(0).notNull(),
 
-  completedChallenges: integer("completed_challenges")
-    .default(0)
-    .notNull(),
+  completedChallenges: integer("completed_challenges").default(0).notNull(),
 
   rank: integer("rank"),
 
-  updatedAt: timestamp("updated_at")
-    .defaultNow()
-    .notNull(),
-
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const employeeBadges =
-pgTable("employee_badges", {
+export const employeeBadges = pgTable(
+  "employee_badges",
+  {
+    id: serial("id").primaryKey(),
 
-  id: serial("id").primaryKey(),
+    employeeId: integer("employee_id")
+      .references(() => employees.id)
+      .notNull(),
 
-  employeeId: integer("employee_id")
-    .references(() => employees.id)
-    .notNull(),
+    badgeId: integer("badge_id")
+      .references(() => badges.id)
+      .notNull(),
 
-  badgeId: integer("badge_id")
-    .references(() => badges.id)
-    .notNull(),
+    awardedAt: timestamp("awarded_at").defaultNow().notNull(),
+  },
+  (table) => ({
+    employeeBadgeUnique: unique().on(table.employeeId, table.badgeId),
+  }),
+);
 
-  awardedAt: timestamp("awarded_at")
-    .defaultNow()
-    .notNull(),
-
-}, (table) => ({
-  employeeBadgeUnique:
-    unique()
-      .on(table.employeeId, table.badgeId),
-}));
-
-export const rewardRedemptions =
-pgTable("reward_redemptions", {
-
+export const rewardRedemptions = pgTable("reward_redemptions", {
   id: serial("id").primaryKey(),
 
   employeeId: integer("employee_id")
@@ -448,25 +362,16 @@ pgTable("reward_redemptions", {
     .references(() => rewards.id)
     .notNull(),
 
-  pointsUsed: integer("points_used")
-    .notNull(),
+  pointsUsed: integer("points_used").notNull(),
 
-  quantity: integer("quantity")
-    .default(1)
-    .notNull(),
+  quantity: integer("quantity").default(1).notNull(),
 
-  status: varchar("status")
-    .default("PENDING"),
+  status: varchar("status").default("PENDING"),
 
-  redeemedAt: timestamp("redeemed_at")
-    .defaultNow()
-    .notNull(),
-
+  redeemedAt: timestamp("redeemed_at").defaultNow().notNull(),
 });
 
-export const esgSettings =
-pgTable("esg_settings", {
-
+export const esgSettings = pgTable("esg_settings", {
   id: serial("id").primaryKey(),
 
   autoEmissionCalculation: boolean("auto_emission_calculation")
@@ -481,60 +386,36 @@ pgTable("esg_settings", {
     .default(false)
     .notNull(),
 
-  environmentalWeight: integer("environmental_weight")
-    .default(40)
-    .notNull(),
+  environmentalWeight: integer("environmental_weight").default(40).notNull(),
 
-  socialWeight: integer("social_weight")
-    .default(30)
-    .notNull(),
+  socialWeight: integer("social_weight").default(30).notNull(),
 
-  governanceWeight: integer("governance_weight")
-    .default(30)
-    .notNull(),
+  governanceWeight: integer("governance_weight").default(30).notNull(),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 
-  updatedAt: timestamp("updated_at")
-    .defaultNow()
-    .notNull(),
-
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-export const notifications =
-pgTable("notifications", {
-
+export const notifications = pgTable("notifications", {
   id: serial("id").primaryKey(),
 
   employeeId: integer("employee_id")
     .references(() => employees.id)
     .notNull(),
 
-  type: varchar("type")
-    .notNull(),
+  type: varchar("type").notNull(),
 
-  title: text("title")
-    .notNull(),
+  title: text("title").notNull(),
 
-  message: text("message")
-    .notNull(),
+  message: text("message").notNull(),
 
-  isRead: boolean("is_read")
-    .default(false)
-    .notNull(),
+  isRead: boolean("is_read").default(false).notNull(),
 
-  createdAt: timestamp("created_at")
-    .defaultNow()
-    .notNull(),
-
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-
-export const notificationSettings =
-pgTable("notification_settings", {
-
+export const notificationSettings = pgTable("notification_settings", {
   id: serial("id").primaryKey(),
 
   employeeId: integer("employee_id")
@@ -542,24 +423,13 @@ pgTable("notification_settings", {
     .notNull()
     .unique(),
 
-  emailEnabled: boolean("email_enabled")
-    .default(true)
-    .notNull(),
+  emailEnabled: boolean("email_enabled").default(true).notNull(),
 
-  inAppEnabled: boolean("in_app_enabled")
-    .default(true)
-    .notNull(),
+  inAppEnabled: boolean("in_app_enabled").default(true).notNull(),
 
-  complianceAlerts: boolean("compliance_alerts")
-    .default(true)
-    .notNull(),
+  complianceAlerts: boolean("compliance_alerts").default(true).notNull(),
 
-  badgeAlerts: boolean("badge_alerts")
-    .default(true)
-    .notNull(),
+  badgeAlerts: boolean("badge_alerts").default(true).notNull(),
 
-  policyReminders: boolean("policy_reminders")
-    .default(true)
-    .notNull(),
-
+  policyReminders: boolean("policy_reminders").default(true).notNull(),
 });

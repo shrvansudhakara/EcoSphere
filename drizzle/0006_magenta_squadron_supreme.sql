@@ -1,0 +1,3 @@
+ALTER TABLE "employee_badges" ADD CONSTRAINT "employee_badges_employee_id_badge_id_unique" UNIQUE("employee_id","badge_id");--> statement-breakpoint
+ALTER TABLE "employee_gamification" ADD CONSTRAINT "employee_gamification_employee_id_unique" UNIQUE("employee_id");--> statement-breakpoint
+ALTER TABLE "notification_settings" ADD CONSTRAINT "notification_settings_employee_id_unique" UNIQUE("employee_id");

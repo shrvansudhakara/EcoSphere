@@ -72,12 +72,8 @@
           "name": "audits_department_id_departments_id_fk",
           "tableFrom": "audits",
           "tableTo": "departments",
-          "columnsFrom": [
-            "department_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["department_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -85,12 +81,8 @@
           "name": "audits_policy_id_esg_policies_id_fk",
           "tableFrom": "audits",
           "tableTo": "esg_policies",
-          "columnsFrom": [
-            "policy_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["policy_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -98,12 +90,8 @@
           "name": "audits_auditor_id_employees_id_fk",
           "tableFrom": "audits",
           "tableTo": "employees",
-          "columnsFrom": [
-            "auditor_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["auditor_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -238,12 +226,8 @@
           "name": "carbon_transactions_department_id_departments_id_fk",
           "tableFrom": "carbon_transactions",
           "tableTo": "departments",
-          "columnsFrom": [
-            "department_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["department_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -251,12 +235,8 @@
           "name": "carbon_transactions_emission_factor_id_emission_factors_id_fk",
           "tableFrom": "carbon_transactions",
           "tableTo": "emission_factors",
-          "columnsFrom": [
-            "emission_factor_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["emission_factor_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -377,12 +357,8 @@
           "name": "challenge_participations_employee_id_employees_id_fk",
           "tableFrom": "challenge_participations",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -390,12 +366,8 @@
           "name": "challenge_participations_challenge_id_challenges_id_fk",
           "tableFrom": "challenge_participations",
           "tableTo": "challenges",
-          "columnsFrom": [
-            "challenge_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["challenge_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -487,12 +459,8 @@
           "name": "challenges_category_id_categories_id_fk",
           "tableFrom": "challenges",
           "tableTo": "categories",
-          "columnsFrom": [
-            "category_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["category_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -564,12 +532,8 @@
           "name": "compliance_issues_audit_id_audits_id_fk",
           "tableFrom": "compliance_issues",
           "tableTo": "audits",
-          "columnsFrom": [
-            "audit_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["audit_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -577,12 +541,8 @@
           "name": "compliance_issues_owner_id_employees_id_fk",
           "tableFrom": "compliance_issues",
           "tableTo": "employees",
-          "columnsFrom": [
-            "owner_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["owner_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -667,12 +627,8 @@
           "name": "csr_activities_category_id_categories_id_fk",
           "tableFrom": "csr_activities",
           "tableTo": "categories",
-          "columnsFrom": [
-            "category_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["category_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -741,12 +697,8 @@
           "name": "department_scores_department_id_departments_id_fk",
           "tableFrom": "department_scores",
           "tableTo": "departments",
-          "columnsFrom": [
-            "department_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["department_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -813,9 +765,7 @@
         "departments_code_unique": {
           "name": "departments_code_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "code"
-          ]
+          "columns": ["code"]
         }
       },
       "policies": {},
@@ -915,12 +865,8 @@
           "name": "employee_badges_employee_id_employees_id_fk",
           "tableFrom": "employee_badges",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -928,12 +874,8 @@
           "name": "employee_badges_badge_id_badges_id_fk",
           "tableFrom": "employee_badges",
           "tableTo": "badges",
-          "columnsFrom": [
-            "badge_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["badge_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1001,12 +943,8 @@
           "name": "employee_gamification_employee_id_employees_id_fk",
           "tableFrom": "employee_gamification",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1079,12 +1017,8 @@
           "name": "employee_participations_employee_id_employees_id_fk",
           "tableFrom": "employee_participations",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1092,12 +1026,8 @@
           "name": "employee_participations_activity_id_csr_activities_id_fk",
           "tableFrom": "employee_participations",
           "tableTo": "csr_activities",
-          "columnsFrom": [
-            "activity_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["activity_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1157,12 +1087,8 @@
           "name": "employees_department_id_departments_id_fk",
           "tableFrom": "employees",
           "tableTo": "departments",
-          "columnsFrom": [
-            "department_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["department_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1172,9 +1098,7 @@
         "employees_email_unique": {
           "name": "employees_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -1443,12 +1367,8 @@
           "name": "notification_settings_employee_id_employees_id_fk",
           "tableFrom": "notification_settings",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1514,12 +1434,8 @@
           "name": "notifications_employee_id_employees_id_fk",
           "tableFrom": "notifications",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1579,12 +1495,8 @@
           "name": "policy_acknowledgements_employee_id_employees_id_fk",
           "tableFrom": "policy_acknowledgements",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1592,12 +1504,8 @@
           "name": "policy_acknowledgements_policy_id_esg_policies_id_fk",
           "tableFrom": "policy_acknowledgements",
           "tableTo": "esg_policies",
-          "columnsFrom": [
-            "policy_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["policy_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1678,9 +1586,7 @@
         "product_esg_profiles_product_code_unique": {
           "name": "product_esg_profiles_product_code_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "product_code"
-          ]
+          "columns": ["product_code"]
         }
       },
       "policies": {},
@@ -1743,12 +1649,8 @@
           "name": "reward_redemptions_employee_id_employees_id_fk",
           "tableFrom": "reward_redemptions",
           "tableTo": "employees",
-          "columnsFrom": [
-            "employee_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["employee_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1756,12 +1658,8 @@
           "name": "reward_redemptions_reward_id_rewards_id_fk",
           "tableFrom": "reward_redemptions",
           "tableTo": "rewards",
-          "columnsFrom": [
-            "reward_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["reward_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1836,18 +1734,12 @@
     "public.category_type": {
       "name": "category_type",
       "schema": "public",
-      "values": [
-        "CSR_ACTIVITY",
-        "CHALLENGE"
-      ]
+      "values": ["CSR_ACTIVITY", "CHALLENGE"]
     },
     "public.status": {
       "name": "status",
       "schema": "public",
-      "values": [
-        "ACTIVE",
-        "INACTIVE"
-      ]
+      "values": ["ACTIVE", "INACTIVE"]
     }
   },
   "schemas": {},

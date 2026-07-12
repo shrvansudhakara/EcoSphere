@@ -43,6 +43,13 @@
       "when": 1783846887108,
       "tag": "0005_smart_jubilee",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1783847630958,
+      "tag": "0006_magenta_squadron_supreme",
+      "breakpoints": true
     }
   ]
 }

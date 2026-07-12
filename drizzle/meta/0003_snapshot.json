@@ -128,12 +128,8 @@
           "name": "carbon_transactions_department_id_departments_id_fk",
           "tableFrom": "carbon_transactions",
           "tableTo": "departments",
-          "columnsFrom": [
-            "department_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["department_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -141,12 +137,8 @@
           "name": "carbon_transactions_emission_factor_id_emission_factors_id_fk",
           "tableFrom": "carbon_transactions",
           "tableTo": "emission_factors",
-          "columnsFrom": [
-            "emission_factor_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["emission_factor_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -285,12 +277,8 @@
           "name": "csr_activities_category_id_categories_id_fk",
           "tableFrom": "csr_activities",
           "tableTo": "categories",
-          "columnsFrom": [
-            "category_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["category_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -357,9 +345,7 @@
         "departments_code_unique": {
           "name": "departments_code_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "code"
-          ]
+          "columns": ["code"]
         }
       },
       "policies": {},
@@ -622,9 +608,7 @@
         "product_esg_profiles_product_code_unique": {
           "name": "product_esg_profiles_product_code_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "product_code"
-          ]
+          "columns": ["product_code"]
         }
       },
       "policies": {},
@@ -695,18 +679,12 @@
     "public.category_type": {
       "name": "category_type",
       "schema": "public",
-      "values": [
-        "CSR_ACTIVITY",
-        "CHALLENGE"
-      ]
+      "values": ["CSR_ACTIVITY", "CHALLENGE"]
     },
     "public.status": {
       "name": "status",
       "schema": "public",
-      "values": [
-        "ACTIVE",
-        "INACTIVE"
-      ]
+      "values": ["ACTIVE", "INACTIVE"]
     }
   },
   "schemas": {},

@@ -1,6 +1,6 @@
 {
-  "id": "744fd3e2-c384-411e-aa09-2c7b2356064d",
-  "prevId": "8aac7807-2489-4394-85be-9da426b13df5",
+  "id": "bc28468d-8a16-4941-98d9-753858837884",
+  "prevId": "204cdf8c-9a9f-488d-949b-49712ac676af",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -72,8 +72,12 @@
           "name": "audits_department_id_departments_id_fk",
           "tableFrom": "audits",
           "tableTo": "departments",
-          "columnsFrom": ["department_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "department_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -81,8 +85,12 @@
           "name": "audits_policy_id_esg_policies_id_fk",
           "tableFrom": "audits",
           "tableTo": "esg_policies",
-          "columnsFrom": ["policy_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "policy_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -90,8 +98,12 @@
           "name": "audits_auditor_id_employees_id_fk",
           "tableFrom": "audits",
           "tableTo": "employees",
-          "columnsFrom": ["auditor_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "auditor_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -226,8 +238,12 @@
           "name": "carbon_transactions_department_id_departments_id_fk",
           "tableFrom": "carbon_transactions",
           "tableTo": "departments",
-          "columnsFrom": ["department_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "department_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -235,8 +251,12 @@
           "name": "carbon_transactions_emission_factor_id_emission_factors_id_fk",
           "tableFrom": "carbon_transactions",
           "tableTo": "emission_factors",
-          "columnsFrom": ["emission_factor_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "emission_factor_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -357,8 +377,12 @@
           "name": "challenge_participations_employee_id_employees_id_fk",
           "tableFrom": "challenge_participations",
           "tableTo": "employees",
-          "columnsFrom": ["employee_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -366,8 +390,12 @@
           "name": "challenge_participations_challenge_id_challenges_id_fk",
           "tableFrom": "challenge_participations",
           "tableTo": "challenges",
-          "columnsFrom": ["challenge_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "challenge_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -459,8 +487,12 @@
           "name": "challenges_category_id_categories_id_fk",
           "tableFrom": "challenges",
           "tableTo": "categories",
-          "columnsFrom": ["category_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "category_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -532,8 +564,12 @@
           "name": "compliance_issues_audit_id_audits_id_fk",
           "tableFrom": "compliance_issues",
           "tableTo": "audits",
-          "columnsFrom": ["audit_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "audit_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -541,8 +577,12 @@
           "name": "compliance_issues_owner_id_employees_id_fk",
           "tableFrom": "compliance_issues",
           "tableTo": "employees",
-          "columnsFrom": ["owner_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "owner_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -627,8 +667,12 @@
           "name": "csr_activities_category_id_categories_id_fk",
           "tableFrom": "csr_activities",
           "tableTo": "categories",
-          "columnsFrom": ["category_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "category_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -697,8 +741,12 @@
           "name": "department_scores_department_id_departments_id_fk",
           "tableFrom": "department_scores",
           "tableTo": "departments",
-          "columnsFrom": ["department_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "department_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -765,7 +813,9 @@
         "departments_code_unique": {
           "name": "departments_code_unique",
           "nullsNotDistinct": false,
-          "columns": ["code"]
+          "columns": [
+            "code"
+          ]
         }
       },
       "policies": {},
@@ -825,6 +875,161 @@
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.employee_badges": {
+      "name": "employee_badges",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "employee_id": {
+          "name": "employee_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "badge_id": {
+          "name": "badge_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "awarded_at": {
+          "name": "awarded_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "employee_badges_employee_id_employees_id_fk": {
+          "name": "employee_badges_employee_id_employees_id_fk",
+          "tableFrom": "employee_badges",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "employee_badges_badge_id_badges_id_fk": {
+          "name": "employee_badges_badge_id_badges_id_fk",
+          "tableFrom": "employee_badges",
+          "tableTo": "badges",
+          "columnsFrom": [
+            "badge_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "employee_badges_employee_id_badge_id_unique": {
+          "name": "employee_badges_employee_id_badge_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "employee_id",
+            "badge_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.employee_gamification": {
+      "name": "employee_gamification",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "employee_id": {
+          "name": "employee_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_xp": {
+          "name": "total_xp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "points_balance": {
+          "name": "points_balance",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "completed_challenges": {
+          "name": "completed_challenges",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "rank": {
+          "name": "rank",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "employee_gamification_employee_id_employees_id_fk": {
+          "name": "employee_gamification_employee_id_employees_id_fk",
+          "tableFrom": "employee_gamification",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "employee_gamification_employee_id_unique": {
+          "name": "employee_gamification_employee_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "employee_id"
+          ]
+        }
+      },
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
@@ -891,8 +1096,12 @@
           "name": "employee_participations_employee_id_employees_id_fk",
           "tableFrom": "employee_participations",
           "tableTo": "employees",
-          "columnsFrom": ["employee_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -900,8 +1109,12 @@
           "name": "employee_participations_activity_id_csr_activities_id_fk",
           "tableFrom": "employee_participations",
           "tableTo": "csr_activities",
-          "columnsFrom": ["activity_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "activity_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -961,8 +1174,12 @@
           "name": "employees_department_id_departments_id_fk",
           "tableFrom": "employees",
           "tableTo": "departments",
-          "columnsFrom": ["department_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "department_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -972,7 +1189,9 @@
         "employees_email_unique": {
           "name": "employees_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         }
       },
       "policies": {},
@@ -1108,6 +1327,234 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
+    "public.esg_settings": {
+      "name": "esg_settings",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "auto_emission_calculation": {
+          "name": "auto_emission_calculation",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "evidence_requirement_enabled": {
+          "name": "evidence_requirement_enabled",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "badge_auto_award_enabled": {
+          "name": "badge_auto_award_enabled",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "environmental_weight": {
+          "name": "environmental_weight",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 40
+        },
+        "social_weight": {
+          "name": "social_weight",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 30
+        },
+        "governance_weight": {
+          "name": "governance_weight",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 30
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.notification_settings": {
+      "name": "notification_settings",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "employee_id": {
+          "name": "employee_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email_enabled": {
+          "name": "email_enabled",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "in_app_enabled": {
+          "name": "in_app_enabled",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "compliance_alerts": {
+          "name": "compliance_alerts",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "badge_alerts": {
+          "name": "badge_alerts",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        },
+        "policy_reminders": {
+          "name": "policy_reminders",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "notification_settings_employee_id_employees_id_fk": {
+          "name": "notification_settings_employee_id_employees_id_fk",
+          "tableFrom": "notification_settings",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "notification_settings_employee_id_unique": {
+          "name": "notification_settings_employee_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "employee_id"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.notifications": {
+      "name": "notifications",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "employee_id": {
+          "name": "employee_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "message": {
+          "name": "message",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "is_read": {
+          "name": "is_read",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "notifications_employee_id_employees_id_fk": {
+          "name": "notifications_employee_id_employees_id_fk",
+          "tableFrom": "notifications",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
     "public.policy_acknowledgements": {
       "name": "policy_acknowledgements",
       "schema": "",
@@ -1157,8 +1604,12 @@
           "name": "policy_acknowledgements_employee_id_employees_id_fk",
           "tableFrom": "policy_acknowledgements",
           "tableTo": "employees",
-          "columnsFrom": ["employee_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1166,8 +1617,12 @@
           "name": "policy_acknowledgements_policy_id_esg_policies_id_fk",
           "tableFrom": "policy_acknowledgements",
           "tableTo": "esg_policies",
-          "columnsFrom": ["policy_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "policy_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1248,9 +1703,96 @@
         "product_esg_profiles_product_code_unique": {
           "name": "product_esg_profiles_product_code_unique",
           "nullsNotDistinct": false,
-          "columns": ["product_code"]
+          "columns": [
+            "product_code"
+          ]
         }
       },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.reward_redemptions": {
+      "name": "reward_redemptions",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "employee_id": {
+          "name": "employee_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reward_id": {
+          "name": "reward_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "points_used": {
+          "name": "points_used",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "name": "quantity",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "status": {
+          "name": "status",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'PENDING'"
+        },
+        "redeemed_at": {
+          "name": "redeemed_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "reward_redemptions_employee_id_employees_id_fk": {
+          "name": "reward_redemptions_employee_id_employees_id_fk",
+          "tableFrom": "reward_redemptions",
+          "tableTo": "employees",
+          "columnsFrom": [
+            "employee_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "reward_redemptions_reward_id_rewards_id_fk": {
+          "name": "reward_redemptions_reward_id_rewards_id_fk",
+          "tableFrom": "reward_redemptions",
+          "tableTo": "rewards",
+          "columnsFrom": [
+            "reward_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
@@ -1319,12 +1861,18 @@
     "public.category_type": {
       "name": "category_type",
       "schema": "public",
-      "values": ["CSR_ACTIVITY", "CHALLENGE"]
+      "values": [
+        "CSR_ACTIVITY",
+        "CHALLENGE"
+      ]
     },
     "public.status": {
       "name": "status",
       "schema": "public",
-      "values": ["ACTIVE", "INACTIVE"]
+      "values": [
+        "ACTIVE",
+        "INACTIVE"
+      ]
     }
   },
   "schemas": {},
