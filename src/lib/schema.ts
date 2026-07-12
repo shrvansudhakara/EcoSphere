@@ -8,6 +8,7 @@ import {
   text,
   timestamp,
   varchar,
+  unique,
 } from "drizzle-orm/pg-core";
 
 export const departments = pgTable("departments", {
@@ -388,7 +389,8 @@ pgTable("employee_gamification", {
 
   employeeId: integer("employee_id")
     .references(() => employees.id)
-    .notNull(),
+    .notNull()
+    .unique(),
 
   totalXp: integer("total_xp")
     .default(0)
@@ -427,7 +429,11 @@ pgTable("employee_badges", {
     .defaultNow()
     .notNull(),
 
-});
+}, (table) => ({
+  employeeBadgeUnique:
+    unique()
+      .on(table.employeeId, table.badgeId),
+}));
 
 export const rewardRedemptions =
 pgTable("reward_redemptions", {
@@ -533,7 +539,8 @@ pgTable("notification_settings", {
 
   employeeId: integer("employee_id")
     .references(() => employees.id)
-    .notNull(),
+    .notNull()
+    .unique(),
 
   emailEnabled: boolean("email_enabled")
     .default(true)

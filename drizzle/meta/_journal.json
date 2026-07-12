@@ -36,6 +36,13 @@
       "when": 1783844594818,
       "tag": "0004_empty_madame_hydra",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1783846887108,
+      "tag": "0005_smart_jubilee",
+      "breakpoints": true
     }
   ]
 }
