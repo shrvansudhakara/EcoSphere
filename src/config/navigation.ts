@@ -1,3 +1,13 @@
+import {
+  Building2,
+  FileText,
+  LayoutDashboard,
+  Leaf,
+  Settings,
+  Trophy,
+  Users,
+} from "lucide-react";
+
 export const TOP_NAV_ITEMS = [
   { label: "Dashboard", href: "/dashboard" },
   { label: "Environmental", href: "/environmental" },
@@ -12,11 +22,13 @@ export const SIDEBAR_SECTIONS = [
   {
     label: "Dashboard",
     href: "/dashboard",
+    icon: LayoutDashboard,
     children: [],
   },
   {
     label: "Environmental",
     href: "/environmental",
+    icon: Leaf,
     children: [
       { label: "Emission Factors", href: "/environmental" },
       { label: "Product ESG Profiles", href: "/environmental" },
@@ -27,6 +39,7 @@ export const SIDEBAR_SECTIONS = [
   {
     label: "Social",
     href: "/social",
+    icon: Users,
     children: [
       { label: "CSR Activities", href: "/social" },
       { label: "Employee Participation", href: "/social" },
@@ -36,6 +49,7 @@ export const SIDEBAR_SECTIONS = [
   {
     label: "Governance",
     href: "/governance",
+    icon: Building2,
     children: [
       { label: "Policies", href: "/governance" },
       { label: "Policy Acknowledgements", href: "/governance" },
@@ -46,6 +60,7 @@ export const SIDEBAR_SECTIONS = [
   {
     label: "Gamification",
     href: "/gamification",
+    icon: Trophy,
     children: [
       { label: "Challenges", href: "/gamification" },
       { label: "Challenge Participation", href: "/gamification" },
@@ -57,6 +72,7 @@ export const SIDEBAR_SECTIONS = [
   {
     label: "Reports",
     href: "/reports",
+    icon: FileText,
     children: [
       { label: "Environmental Report", href: "/reports" },
       { label: "Social Report", href: "/reports" },
@@ -68,6 +84,7 @@ export const SIDEBAR_SECTIONS = [
   {
     label: "Settings",
     href: "/settings",
+    icon: Settings,
     children: [
       { label: "Departments", href: "/settings" },
       { label: "Categories", href: "/settings" },
