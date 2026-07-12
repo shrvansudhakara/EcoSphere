@@ -379,3 +379,180 @@ pgTable("department_scores", {
     .notNull(),
 
 });
+
+//6 extra gamification tables
+export const employeeGamification =
+pgTable("employee_gamification", {
+
+  id: serial("id").primaryKey(),
+
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
+
+  totalXp: integer("total_xp")
+    .default(0)
+    .notNull(),
+
+  pointsBalance: integer("points_balance")
+    .default(0)
+    .notNull(),
+
+  completedChallenges: integer("completed_challenges")
+    .default(0)
+    .notNull(),
+
+  rank: integer("rank"),
+
+  updatedAt: timestamp("updated_at")
+    .defaultNow()
+    .notNull(),
+
+});
+
+export const employeeBadges =
+pgTable("employee_badges", {
+
+  id: serial("id").primaryKey(),
+
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
+
+  badgeId: integer("badge_id")
+    .references(() => badges.id)
+    .notNull(),
+
+  awardedAt: timestamp("awarded_at")
+    .defaultNow()
+    .notNull(),
+
+});
+
+export const rewardRedemptions =
+pgTable("reward_redemptions", {
+
+  id: serial("id").primaryKey(),
+
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
+
+  rewardId: integer("reward_id")
+    .references(() => rewards.id)
+    .notNull(),
+
+  pointsUsed: integer("points_used")
+    .notNull(),
+
+  quantity: integer("quantity")
+    .default(1)
+    .notNull(),
+
+  status: varchar("status")
+    .default("PENDING"),
+
+  redeemedAt: timestamp("redeemed_at")
+    .defaultNow()
+    .notNull(),
+
+});
+
+export const esgSettings =
+pgTable("esg_settings", {
+
+  id: serial("id").primaryKey(),
+
+  autoEmissionCalculation: boolean("auto_emission_calculation")
+    .default(false)
+    .notNull(),
+
+  evidenceRequirementEnabled: boolean("evidence_requirement_enabled")
+    .default(false)
+    .notNull(),
+
+  badgeAutoAwardEnabled: boolean("badge_auto_award_enabled")
+    .default(false)
+    .notNull(),
+
+  environmentalWeight: integer("environmental_weight")
+    .default(40)
+    .notNull(),
+
+  socialWeight: integer("social_weight")
+    .default(30)
+    .notNull(),
+
+  governanceWeight: integer("governance_weight")
+    .default(30)
+    .notNull(),
+
+  createdAt: timestamp("created_at")
+    .defaultNow()
+    .notNull(),
+
+  updatedAt: timestamp("updated_at")
+    .defaultNow()
+    .notNull(),
+
+});
+
+export const notifications =
+pgTable("notifications", {
+
+  id: serial("id").primaryKey(),
+
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
+
+  type: varchar("type")
+    .notNull(),
+
+  title: text("title")
+    .notNull(),
+
+  message: text("message")
+    .notNull(),
+
+  isRead: boolean("is_read")
+    .default(false)
+    .notNull(),
+
+  createdAt: timestamp("created_at")
+    .defaultNow()
+    .notNull(),
+
+});
+
+
+export const notificationSettings =
+pgTable("notification_settings", {
+
+  id: serial("id").primaryKey(),
+
+  employeeId: integer("employee_id")
+    .references(() => employees.id)
+    .notNull(),
+
+  emailEnabled: boolean("email_enabled")
+    .default(true)
+    .notNull(),
+
+  inAppEnabled: boolean("in_app_enabled")
+    .default(true)
+    .notNull(),
+
+  complianceAlerts: boolean("compliance_alerts")
+    .default(true)
+    .notNull(),
+
+  badgeAlerts: boolean("badge_alerts")
+    .default(true)
+    .notNull(),
+
+  policyReminders: boolean("policy_reminders")
+    .default(true)
+    .notNull(),
+
+});
