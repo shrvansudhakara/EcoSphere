@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 import { SIDEBAR_SECTIONS } from "@/config/navigation";
 
 export default function Sidebar() {
+  const pathname = usePathname();
   return (
     <aside className="w-64 border-r border-zinc-800 bg-zinc-900 p-4">
       <nav aria-label="Sidebar navigation" className="flex flex-col gap-5">
@@ -11,7 +14,12 @@ export default function Sidebar() {
           <div key={section.label}>
             <Link
               href={section.href}
-              className="block text-sm font-semibold text-zinc-300 hover:text-white"
+              className={cn(
+                "block rounded-md px-2 py-1 text-sm font-semibold transition-colors",
+                pathname === section.href
+                  ? "bg-zinc-800 text-white"
+                  : "text-zinc-300 hover:bg-zinc-800 hover:text-white",
+              )}
             >
               {section.label}
             </Link>
@@ -22,7 +30,12 @@ export default function Sidebar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-sm text-zinc-400 hover:text-white"
+                    className={cn(
+                      "rounded-md px-2 py-1 text-sm transition-colors",
+                      pathname === item.href
+                        ? "bg-zinc-800 text-white"
+                        : "text-zinc-400 hover:bg-zinc-800 hover:text-white",
+                    )}
                   >
                     {item.label}
                   </Link>
