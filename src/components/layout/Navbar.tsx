@@ -3,16 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-
-const NAV_ITEMS = [
-  { label: "Dashboard", href: "/dashboard" },
-  { label: "Environmental", href: "/environmental" },
-  { label: "Social", href: "/social" },
-  { label: "Governance", href: "/governance" },
-  { label: "Gamification", href: "/gamification" },
-  { label: "Reports", href: "/reports" },
-  { label: "Settings", href: "/settings" },
-];
+import { NAV_ITEMS } from "@/config/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
