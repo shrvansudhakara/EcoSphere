@@ -114,9 +114,7 @@
         "departments_code_unique": {
           "name": "departments_code_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "code"
-          ]
+          "columns": ["code"]
         }
       },
       "policies": {},
@@ -314,18 +312,12 @@
     "public.category_type": {
       "name": "category_type",
       "schema": "public",
-      "values": [
-        "CSR_ACTIVITY",
-        "CHALLENGE"
-      ]
+      "values": ["CSR_ACTIVITY", "CHALLENGE"]
     },
     "public.status": {
       "name": "status",
       "schema": "public",
-      "values": [
-        "ACTIVE",
-        "INACTIVE"
-      ]
+      "values": ["ACTIVE", "INACTIVE"]
     }
   },
   "schemas": {},

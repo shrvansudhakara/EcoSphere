@@ -74,3 +74,75 @@ export const esgPolicies = pgTable("esg_policies", {
 
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
+
+export const productEsgProfiles = pgTable("product_esg_profiles", {
+  id: serial("id").primaryKey(),
+  productName: text("product_name").notNull(),
+  productCode: text("product_code").notNull().unique(),
+  carbonFootprint: doublePrecision("carbon_footprint").notNull(),
+  recyclablePercentage: doublePrecision("recyclable_percentage").default(0),
+  sustainabilityRating: integer("sustainability_rating"),
+  description: text("description"),
+  status: statusEnum("status").default("ACTIVE").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const badges = pgTable("badges", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description"),
+  unlockRule: text("unlock_rule").notNull(),
+  icon: text("icon"),
+  points: integer("points").default(0),
+  isActive: boolean("is_active").default(true).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const rewards = pgTable("rewards", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description"),
+  pointsRequired: integer("points_required").notNull(),
+  stock: integer("stock").default(0),
+  status: statusEnum("status").default("ACTIVE").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+//Transaction tables
+export const carbonTransactions = pgTable("carbon_transactions", {
+  id: serial("id").primaryKey(),
+
+  departmentId: integer("department_id")
+    .references(() => departments.id)
+    .notNull(),
+
+  emissionFactorId: integer("emission_factor_id")
+    .references(() => emissionFactors.id)
+    .notNull(),
+
+  activity: text("activity").notNull(),
+  quantity: doublePrecision("quantity").notNull(),
+  calculatedEmission: doublePrecision("calculated_emission").notNull(),
+  transactionDate: timestamp("transaction_date").defaultNow().notNull(),
+
+  remarks: text("remarks"),
+});
+
+export const csrActivities = pgTable("csr_activities", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+
+  categoryId: integer("category_id")
+    .references(() => categories.id)
+    .notNull(),
+
+  description: text("description"),
+  location: text("location"),
+  startDate: timestamp("start_date").notNull(),
+  endDate: timestamp("end_date").notNull(),
+  maxParticipants: integer("max_participants"),
+
+  status: statusEnum("status").default("ACTIVE").notNull(),
+
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
